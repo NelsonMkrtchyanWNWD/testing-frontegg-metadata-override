@@ -56,8 +56,11 @@ module.exports = (req, res) => {
     },
   };
 
+  const fronteggAppId = "98dad650-f1cf-427a-adc5-8043b136da47"; // mai app
+  // const fronteggAppId = "05cf0d02-af47-41e9-b894-221a07c0d97c"; // windward
+
   const override =
-    appId === "05cf0d02-af47-41e9-b894-221a07c0d97c"
+    appId === fronteggAppId
       ? specialAppOverride
       : defaultOverride;
 
