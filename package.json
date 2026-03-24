@@ -1,0 +1,12 @@
+{
+  "name": "testing-frontegg-metadata-override",
+  "version": "1.0.0",
+  "description": "Test server to validate Frontegg metadata override headers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
