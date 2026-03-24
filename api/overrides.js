@@ -31,6 +31,16 @@ module.exports = (req, res) => {
   };
 
   const specialAppOverride = {
+    themeV2: {
+      loginBox: {
+        logo: {
+          image: "https://placehold.co/200x60/orange/white?text=Special+App",
+        },
+        rootStyle: {
+          backgroundColor: "#1a1a2e",
+        },
+      },
+    },
     localizations: {
       en: {
         loginBox: {
