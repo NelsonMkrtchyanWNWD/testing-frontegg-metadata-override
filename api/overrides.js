@@ -30,5 +30,26 @@ module.exports = (req, res) => {
     },
   };
 
-  res.json(defaultOverride);
+  const specialAppOverride = {
+    localizations: {
+      en: {
+        loginBox: {
+          login: {
+            title: "Welcome to Special App",
+          },
+        },
+        errors: {
+          "ER-01196": "Invalid credentials",
+          "ER-01078": "Incorrect username or password",
+        },
+      },
+    },
+  };
+
+  const override =
+    appId === "05cf0d02-af47-41e9-b894-221a07c0d97c"
+      ? specialAppOverride
+      : defaultOverride;
+
+  res.json(override);
 };
