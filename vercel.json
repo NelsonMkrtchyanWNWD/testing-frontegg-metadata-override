@@ -2,6 +2,9 @@
   "functions": {
     "api/overrides.js": {
       "includeFiles": "overrides/**"
+    },
+    "api/frontegg-metadata-override/[instanceName].js": {
+      "includeFiles": "overrides/**"
     }
   },
   "headers": [
