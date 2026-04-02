@@ -1,68 +1,57 @@
-module.exports = (req, res) => {
-  // CORS headers — allow Frontegg's hosted login to call this endpoint
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "frontegg-requested-application-id, x-frontegg-framework, x-frontegg-sdk"
-  );
+const fs = require('fs');
+const path = require('path');
 
-  // Handle preflight
-  if (req.method === "OPTIONS") {
+const OVERRIDES_DIR = path.join(__dirname, '..', 'overrides');
+const FRONTEGG_APP_ID_HEADER = 'frontegg-requested-application-id';
+const INSTANCE_NAME_PATTERN = /^[a-z0-9_]+$/;
+const CACHE_MAX_AGE_SECONDS = 60 * 60;
+
+const APP_ID_TO_INSTANCE_NAME = {
+  '98dad650-f1cf-427a-adc5-8043b136da47': 'mai', // WINDWARD_MAIX_QA
+  '8125b1dc-11fd-4e6c-87f1-d69ad2810909': 'mai', // WINDWARD_MAIX_PRODUCTION
+};
+
+function readOverrideFile(filePath) {
+  try {
+    return fs.readFileSync(filePath);
+  } catch (err) {
+    if (err.code === 'ENOENT') return null;
+    throw err;
+  }
+}
+
+module.exports = (req, res) => {
+  if (req.method === 'OPTIONS') {
     return res.status(204).end();
   }
 
-  const appId = req.headers["frontegg-requested-application-id"];
+  const rawInstanceName = req.query.instance || '';
+  const instanceName = rawInstanceName.toLowerCase().replace(/-/g, '_');
 
-  console.log("--- Incoming request ---");
-  console.log("frontegg-requested-application-id:", appId || "NOT PRESENT");
-  console.log("All headers:", JSON.stringify(req.headers, null, 2));
-  console.log("------------------------");
+  if (!instanceName || !INSTANCE_NAME_PATTERN.test(instanceName)) {
+    return res.status(400).json({ error: 'Invalid instance name' });
+  }
 
-  const defaultOverride = {
-    localizations: {
-      en: {
-        errors: {
-          "ER-01196": "Invalid credentials",
-          "ER-01078": "Incorrect username or password",
-        },
-      },
-    },
-  };
+  const appId = req.headers[FRONTEGG_APP_ID_HEADER];
+  const appInstanceName = appId && APP_ID_TO_INSTANCE_NAME[appId];
 
-  const specialAppOverride = {
-    themeV2: {
-      loginBox: {
-        logo: {
-          image: "https://placehold.co/200x60/orange/white?text=Special+App",
-        },
-        rootStyle: {
-          backgroundImage: "url(https://placehold.co/1920x1080/1a1a2e/1a1a2e)",
-        },
-      },
-    },
-    localizations: {
-      en: {
-        loginBox: {
-          login: {
-            title: "Welcome to Special App",
-          },
-        },
-        errors: {
-          "ER-01196": "Invalid credentials",
-          "ER-01078": "Incorrect username or password",
-        },
-      },
-    },
-  };
+  res.setHeader('Vary', FRONTEGG_APP_ID_HEADER);
+  res.setHeader('Cache-Control', `public, max-age=${CACHE_MAX_AGE_SECONDS}`);
 
-  const fronteggAppId = "98dad650-f1cf-427a-adc5-8043b136da47"; // mai app
-  // const fronteggAppId = "05cf0d02-af47-41e9-b894-221a07c0d97c"; // windward
+  let content = null;
 
-  const override =
-    appId === fronteggAppId
-      ? specialAppOverride
-      : defaultOverride;
+  if (appInstanceName) {
+    content = readOverrideFile(path.join(OVERRIDES_DIR, `${instanceName}.${appInstanceName}.json`));
+  }
 
-  res.json(override);
+  if (!content) {
+    content = readOverrideFile(path.join(OVERRIDES_DIR, `${instanceName}.json`));
+  }
+
+  if (!content) {
+    return res.status(404).json({ error: 'Instance not found' });
+  }
+
+  res.setHeader('Content-Type', 'application/json');
+  res.end(content);
 };

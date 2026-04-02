@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/overrides.js": {
+      "includeFiles": "overrides/**"
+    }
+  },
   "headers": [
     {
       "source": "/api/(.*)",

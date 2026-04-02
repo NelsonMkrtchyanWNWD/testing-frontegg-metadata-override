@@ -1,0 +1,27 @@
+{
+  "themeV2": {
+    "loginBox": {
+      "logo": {
+        "style": {
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "margin": "0 auto"
+        }
+      },
+      "rootStyle": {
+        "& [data-test-id=\"forgot-password-btn\"]": {
+          "display": "none"
+        }
+      }
+    }
+  },
+  "localizations": {
+    "en": {
+      "errors": {
+        "ER-01196": "Invalid credentials",
+        "ER-01078": "Incorrect username or password"
+      }
+    }
+  }
+}

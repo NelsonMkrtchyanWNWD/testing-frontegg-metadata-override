@@ -1,0 +1,37 @@
+{
+  "themeV2": {
+    "loginBox": {
+      "logo": {
+        "image": "https://cdn.us.frontegg.com/public-vendor-assets/25c44fa2-6aea-4f39-aa7b-0a699eb9da03/assets/logo-1772020657888.svg%2Bxml",
+        "style": {
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "position": "relative",
+          "&::after": {
+            "content": "'Beta'",
+            "marginLeft": "8px",
+            "padding": "4px 16px",
+            "fontSize": "24px",
+            "fontFamily": "Roboto, sans-serif",
+            "color": "#fff",
+            "border": "1px solid rgba(255,255,255,0.5)",
+            "borderRadius": "4px",
+            "letterSpacing": "0.5px"
+          }
+        }
+      },
+      "rootStyle": {
+        "background": "linear-gradient(135deg, #0a1628 0%, #122044 40%, #1a3060 70%, #0e1a35 100%)"
+      }
+    }
+  },
+  "localizations": {
+    "en": {
+      "errors": {
+        "ER-01196": "Invalid credentials",
+        "ER-01078": "Incorrect username or password"
+      }
+    }
+  }
+}

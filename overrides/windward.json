@@ -1,0 +1,10 @@
+{
+  "localizations": {
+    "en": {
+      "errors": {
+        "ER-01196": "Invalid credentials",
+        "ER-01078": "Incorrect username or password"
+      }
+    }
+  }
+}
