@@ -3,27 +3,13 @@
     "loginBox": {
       "themeName": "classic",
       "logo": {
-        "image": "https://cdn.us.frontegg.com/public-vendor-assets/25c44fa2-6aea-4f39-aa7b-0a699eb9da03/assets/logo-1772020657888.svg%2Bxml",
+        "image": "https://marint-web-static.wnwd.com/maix/logo-dark.svg",
         "alignment": "center",
         "placement": "page",
         "style": {
           "display": "flex",
           "justifyContent": "center",
-          "alignItems": "center",
-          "position": "relative",
-          "&::after": {
-            "content": "'Beta'",
-            "marginLeft": "8px",
-            "padding": "2px 10px",
-            "fontSize": "12px",
-            "lineHeight": "16px",
-            "fontFamily": "Inter, Roboto, sans-serif",
-            "fontWeight": "500",
-            "color": "#94a3b8",
-            "border": "1px solid #314158",
-            "borderRadius": "6px",
-            "letterSpacing": "0.2px"
-          }
+          "alignItems": "center"
         }
       },
       "rootStyle": {
@@ -35,6 +21,9 @@
         "& [data-test-id=\"forgot-password-btn\"]": {
           "color": "#f8fafc",
           "textDecoration": "underline"
+        },
+        "& h1, & h2": {
+          "color": "#f8fafc"
         }
       },
       "boxStyle": {
@@ -77,6 +66,12 @@
   },
   "localizations": {
     "en": {
+      "loginBox": {
+        "login": {
+          "title": "Login",
+          "subTitle": "Sign in to WW Agentic"
+        }
+      },
       "errors": {
         "ER-01196": "Invalid credentials",
         "ER-01078": "Incorrect username or password"
