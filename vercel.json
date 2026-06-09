@@ -3,7 +3,7 @@
     "api/overrides.js": {
       "includeFiles": "overrides/**"
     },
-    "api/frontegg-metadata-override/[instanceName].js": {
+    "api/frontegg-metadata-override/[version]/[instanceName].js": {
       "includeFiles": "overrides/**"
     }
   },
