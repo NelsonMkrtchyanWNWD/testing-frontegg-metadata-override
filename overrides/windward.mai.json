@@ -1,8 +1,11 @@
 {
   "themeV2": {
     "loginBox": {
+      "themeName": "classic",
       "logo": {
         "image": "https://cdn.us.frontegg.com/public-vendor-assets/25c44fa2-6aea-4f39-aa7b-0a699eb9da03/assets/logo-1772020657888.svg%2Bxml",
+        "alignment": "center",
+        "placement": "page",
         "style": {
           "display": "flex",
           "justifyContent": "center",
@@ -24,42 +27,51 @@
         }
       },
       "rootStyle": {
-        "minHeight": "100vh",
-        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, sans-serif",
-        "background": "radial-gradient(120% 120% at 0% 0%, rgba(13,74,110,0.35) 0%, rgba(2,8,23,0) 46%), radial-gradient(120% 120% at 100% 100%, rgba(13,74,110,0.30) 0%, rgba(2,8,23,0) 48%), radial-gradient(90% 90% at 50% 38%, #0a1a33 0%, #020817 72%)",
-        "& input": {
-          "background": "rgba(30,41,59,0.3)",
-          "border": "1px solid #314158",
-          "borderRadius": "8px",
-          "height": "36px",
-          "padding": "8px 12px",
-          "color": "#f8fafc",
-          "fontSize": "14px",
-          "boxShadow": "0px 4px 10px 0px rgba(0,0,0,0.15)"
-        },
-        "& input::placeholder": {
-          "color": "#94a3b8",
-          "fontSize": "14px"
-        },
-        "& button[type=\"submit\"]": {
-          "background": "#00a3cc",
-          "color": "#020817",
-          "height": "36px",
-          "minHeight": "44px",
-          "borderRadius": "8px",
-          "fontSize": "14px",
-          "fontWeight": "500",
-          "textTransform": "none"
-        },
-        "& button[type=\"submit\"]:disabled": {
-          "opacity": "0.5"
-        },
+        "backgroundColor": "#020817",
+        "backgroundImage": "url(https://marint-web-static.wnwd.com/maix/login-background.svg)",
+        "backgroundSize": "cover",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
         "& [data-test-id=\"forgot-password-btn\"]": {
           "color": "#f8fafc",
-          "fontSize": "14px",
-          "textDecoration": "underline",
-          "textAlign": "center"
+          "textDecoration": "underline"
         }
+      },
+      "boxStyle": {
+        "backgroundColor": "#0a192f",
+        "border": "1px solid #314158",
+        "borderRadius": "16px",
+        "boxShadow": "0px 4px 10px 0px rgba(0,0,0,0.15)"
+      },
+      "palette": {
+        "primary": {
+          "main": "#00a3cc",
+          "dark": "#0089ab",
+          "light": "#33b5d6",
+          "hover": "#0089ab",
+          "active": "#0089ab",
+          "contrastText": "#020817"
+        }
+      },
+      "inputTheme": {
+        "base": {
+          "color": "#f8fafc",
+          "borderColor": "#314158",
+          "backgroundColor": "rgba(30,41,59,0.3)"
+        },
+        "label": {
+          "color": "#f8fafc"
+        }
+      },
+      "submitButtonTheme": {
+        "base": {
+          "color": "#020817",
+          "borderColor": "#00a3cc",
+          "backgroundColor": "#00a3cc"
+        }
+      },
+      "typographyStyleOptions": {
+        "fontFamily": "Inter, sans-serif"
       }
     }
   },
