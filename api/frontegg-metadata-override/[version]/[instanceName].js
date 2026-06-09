@@ -1,7 +1,9 @@
+const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
-const OVERRIDES_DIR = path.join(__dirname, '..', '..', '..', '..', 'overrides');
+const OVERRIDES_DIR = path.join(__dirname, '..', '..', '..', 'overrides');
 const FRONTEGG_APP_ID_HEADER = 'frontegg-requested-application-id';
 const VERSION_PATTERN = /^v[1-9][0-9]*$/;
 
@@ -13,7 +15,17 @@ const APP_ID_TO_APP_NAME = {
   '8125b1dc-11fd-4e6c-87f1-d69ad2810909': 'mai',    // WINDWARD_MAIX_PRODUCTION
 };
 
-module.exports = (req, res) => {
+const app = express();
+
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'OPTIONS'],
+    allowedHeaders: [FRONTEGG_APP_ID_HEADER, 'x-frontegg-framework', 'x-frontegg-sdk'],
+  })
+);
+
+app.get('*', (req, res) => {
   const version = req.query.version;
 
   if (!VERSION_PATTERN.test(version)) {
@@ -43,4 +55,6 @@ module.exports = (req, res) => {
   const fileToServe = appSpecificFileExists ? appSpecificFile : `${instanceName}.json`;
 
   res.sendFile(fileToServe, { root: OVERRIDES_DIR, maxAge: '1y', immutable: true });
-};
+});
+
+module.exports = app;
