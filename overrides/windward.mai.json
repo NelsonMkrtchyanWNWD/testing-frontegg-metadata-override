@@ -11,6 +11,10 @@
           "justifyContent": "center",
           "alignItems": "center",
           "position": "relative",
+          "& img": {
+            "width": "260px",
+            "height": "auto"
+          },
           "&::after": {
             "content": "'Beta'",
             "marginLeft": "12px",
@@ -48,6 +52,25 @@
           "lineHeight": "20px",
           "letterSpacing": "0",
           "color": "#94a3b8"
+        },
+        "& [data-test-id=\"input-box-identifier\"] span.MuiTypography-label:not(:empty)": {
+          "fontSize": "0"
+        },
+        "& [data-test-id=\"input-box-identifier\"] span.MuiTypography-label:not(:empty)::after": {
+          "content": "'Username'",
+          "fontSize": "14px"
+        },
+        "& [data-test-id=\"submit-btn\"] span": {
+          "fontSize": "0"
+        },
+        "& [data-test-id=\"submit-btn\"]::after": {
+          "content": "'Log in'",
+          "fontSize": "14px",
+          "fontWeight": "500"
+        },
+        "& form:has(input[name=\"identifier\"]:placeholder-shown) [data-test-id=\"submit-btn\"], & form:has(input[name=\"password\"]:placeholder-shown) [data-test-id=\"submit-btn\"]": {
+          "backgroundColor": "rgba(0,163,204,0.4) !important",
+          "color": "rgba(2,8,23,0.6) !important"
         }
       },
       "boxStyle": {
