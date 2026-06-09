@@ -32,7 +32,7 @@
       },
       "rootStyle": {
         "backgroundColor": "#020817",
-        "backgroundImage": "url(https://marint-web-static.wnwd.com/maix/login-background.svg)",
+        "backgroundImage": "url(https://marint-web-static.wnwd.com/maix/login-background.webp)",
         "backgroundSize": "cover",
         "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
