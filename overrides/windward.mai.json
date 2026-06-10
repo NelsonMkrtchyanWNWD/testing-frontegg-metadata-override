@@ -36,6 +36,12 @@
         "backgroundSize": "cover",
         "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
+        "& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active": {
+          "WebkitBoxShadow": "0 0 0 1000px #101e33 inset !important",
+          "WebkitTextFillColor": "#f8fafc !important",
+          "caretColor": "#f8fafc",
+          "transition": "background-color 9999s ease-in-out 0s"
+        },
         "& [data-test-id=\"forgot-password-btn\"]": {
           "color": "#f8fafc",
           "textDecoration": "underline"
