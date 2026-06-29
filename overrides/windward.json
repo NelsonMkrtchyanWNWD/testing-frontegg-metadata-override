@@ -2,8 +2,7 @@
   "themeV2": {
     "loginBox": {
       "logo": {
-        "_image": "https://testing-frontegg-metadata-override.vercel.app/black-box.svg",
-        "image": "",
+        "image": "https://testing-frontegg-metadata-override.vercel.app/black-box.svg",
         "alignment": "center",
         "placement": "page",
         "style": {
@@ -11,12 +10,10 @@
           "justifyContent": "center",
           "alignItems": "center",
           "margin": "0 auto",
-          "width": "260px",
-          "height": "60px",
-          "backgroundColor": "black",
-          "marginBottom": "24px",
           "& img": {
-            "display": "none"
+            "maxWidth": "260px",
+            "width": "80%",
+            "height": "auto"
           }
         }
       },
