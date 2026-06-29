@@ -13,6 +13,8 @@ const APP_ID_TO_APP_NAME = {
   '41ded717-0922-44cc-af1c-63f3c65e37df': 'marint', // WINDWARD_MARINT_PRODUCTION
   '98dad650-f1cf-427a-adc5-8043b136da47': 'mai',    // WINDWARD_MAIX_QA
   '8125b1dc-11fd-4e6c-87f1-d69ad2810909': 'mai',    // WINDWARD_MAIX_PRODUCTION
+  '1b7cc35a-e2ed-4a95-87e5-dce787a7fec0': 'neptune',    // NEPTUNE_MARINT_QA
+  '28e3dab1-fdf6-4b6c-803b-8cf37f6e586e': 'neptune',    // NEPTUNE_MARINT_PRODUCTION
 };
 
 const app = express();
