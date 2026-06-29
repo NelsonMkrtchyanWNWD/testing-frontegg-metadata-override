@@ -2,6 +2,7 @@
   "themeV2": {
     "loginBox": {
       "logo": {
+        "image": "",
         "alignment": "center",
         "placement": "page",
         "style": {
