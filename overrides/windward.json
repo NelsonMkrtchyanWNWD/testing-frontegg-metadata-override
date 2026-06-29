@@ -2,14 +2,13 @@
   "themeV2": {
     "loginBox": {
       "logo": {
-        "image": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        "image": "https://testing-frontegg-metadata-override.vercel.app/black-box.svg",
         "alignment": "center",
         "placement": "page",
         "style": {
           "& img": {
             "width": "260px",
-            "height": "60px",
-            "backgroundColor": "black"
+            "height": "60px"
           }
         }
       }
