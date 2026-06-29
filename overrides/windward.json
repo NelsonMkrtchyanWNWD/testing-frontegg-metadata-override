@@ -11,9 +11,11 @@
           "alignItems": "center",
           "margin": "0 auto",
           "& img": {
-            "maxWidth": "260px",
-            "width": "80%",
-            "height": "auto"
+            "width": "260px",
+            "height": "60px"
+          },
+          "@media (max-width: 600px)": {
+            "marginBottom": "24px"
           }
         }
       },
