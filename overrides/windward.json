@@ -2,13 +2,14 @@
   "themeV2": {
     "loginBox": {
       "logo": {
-        "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='60'%3E%3Crect width='260' height='60' fill='black'/%3E%3C/svg%3E",
+        "image": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
         "alignment": "center",
         "placement": "page",
         "style": {
           "& img": {
             "width": "260px",
-            "height": "60px"
+            "height": "60px",
+            "backgroundColor": "black"
           }
         }
       }
