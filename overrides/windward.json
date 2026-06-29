@@ -7,6 +7,10 @@
         "alignment": "center",
         "placement": "page",
         "style": {
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "margin": "0 auto",
           "width": "260px",
           "height": "60px",
           "backgroundColor": "black",
@@ -14,6 +18,11 @@
           "& img": {
             "display": "none"
           }
+        }
+      },
+      "rootStyle": {
+        "& [data-test-id=\"forgot-password-btn\"]": {
+          "display": "none"
         }
       }
     }
