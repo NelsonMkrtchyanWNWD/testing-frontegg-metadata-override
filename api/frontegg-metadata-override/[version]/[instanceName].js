@@ -41,14 +41,14 @@ app.get('*', (req, res) => {
   res.set('Vary', FRONTEGG_APP_ID_HEADER);
 
   if (!appId) {
-    res.status(400).json({ error: 'Missing app ID' });
+    res.sendFile('general.json', { root: OVERRIDES_DIR, maxAge: '1y', immutable: true });
     return;
   }
 
   const appName = APP_ID_TO_APP_NAME[appId];
 
   if (!appName) {
-    res.status(400).json({ error: 'Unknown app ID' });
+    res.sendFile('general.json', { root: OVERRIDES_DIR, maxAge: '1y', immutable: true });
     return;
   }
 

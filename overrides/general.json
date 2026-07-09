@@ -1,0 +1,11 @@
+{
+  "localizations": {
+    "en": {
+      "errors": {
+        "ER-01196": "Invalid credentials",
+        "ER-01078": "Incorrect username or password",
+        "ER-01007": "It looks like you used an invalid URL. Please use the official application URL to sign in"
+      }
+    }
+  }
+}
